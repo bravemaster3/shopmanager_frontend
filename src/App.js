@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.bundle'
+import 'boxicons/css/boxicons.min.css'
+import SideBar from "./components/SideBar"
+import Header from "./components/Header"
+import MainDiv from "./components/MainDiv"
 import './App.css';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const showHideSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  }
+
+  const showHideSidebar1 = () => {
+    if (sidebarOpen === false) {
+        setSidebarOpen(true);
+    }
+  }
+
+  const showHideSidebar2 = () => {
+    if (sidebarOpen === true) {
+        setSidebarOpen(false);
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Header onClick = {showHideSidebar} onClick1 = {showHideSidebar1} />
+      <SideBar isOpen = {sidebarOpen} onClick2 = {showHideSidebar2}/>
+      <MainDiv />
+
     </div>
   );
 }

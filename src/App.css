@@ -1,4 +1,167 @@
-.App {
+:root {
+  --headerHeight: 50px;
+  --sidebarWidth: 15vw;
+  --topest_z:  9999;
+}
+
+
+header {
+/*  position: absolute;*/
+  display:  flex;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--headerHeight);
+  background-color: lightcoral;
+}
+
+.sidebar {
+  position: absolute;
+  top: @headerheight;
+  left: -15vw;
+  height: calc(100% - var(--headerHeight));
+  width: var(--sidebarWidth);
+  transition: left 0.3s ease-in-out;
+  background-color: lightgray;
+  overflow: hidden;
+  z-index: var(--topest_z);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+
+#toggleButton {
+  height: var(--headerHeight);
+  width: var(--headerHeight);
+  background-color: transparent;
+}
+
+/*Buttons*/
+.Buttons {
+  align-items: center;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  /*display: inline-flex;*/
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.Buttons box-icon{
+/*  position: relative;*/
+  margin-right: 10px;
+  margin-left: 0px;
+  height: 25px;
+}
+
+.Buttons span {
+  margin-left: 15px;
+}
+
+.Buttons:hover,
+.Buttons:focus { 
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.Buttons:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.Buttons:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+.sidebarButtonsSpec {
+  display: flex;
+  padding: 5px;
+  background-color: transparent;
+  padding-left: 20px;
+  padding-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 30px;
+}
+
+.headerButtonsSpec {
+  background-color: #0A66C2;
+  color: #ffffff;
+  border-radius: 10px;
+  display: inline-flex;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.headerButtonsContainer{
+    margin: auto;
+}
+
+
+/*General elements*/
+span {
+  display:inline-block;
+}
+/*Main Div elements*/
+
+
+#mainDiv{
+  position: absolute;
+  top: @headerWidth;
+  height: calc(100% - var(--headerHeight));
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: solid;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#mainRowDiv {
+  width: 100%;
+}
+
+#half1Div {
+  position:  relative;
+  border: solid;
+  margin: 0;
+}
+
+#half2_1Div {
+  position:  relative;
+  border: solid;
+  margin: 0;
+}
+
+#half2_2Div {
+  position:  relative;
+  border: solid;
+  margin: 0;
+}
+
+
+/*.App {
   text-align: center;
 }
 
@@ -7,11 +170,10 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +197,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/
